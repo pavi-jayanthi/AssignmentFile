@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 style="text-align: center; text-transform: uppercase; color: green;">Search</h2>
+    <input type="text" name="" id="myInput" placeholder="names.." onkeyup="searchFun()">
+    <table id="myTable">
+        <tr class="header">
+            <th style="width: 40%;">Name</th>
+        </tr>
+        <tr>
+            <td>Pavithra</td>
+        </tr>
+        <tr>
+            <td>Pradeep</td>
+        </tr>
+        <tr>
+            <td>Brindha</td>
+        </tr>
+        <tr>
+            <td>Maha</td>
+        </tr>
+        <tr>
+            <td>Swedha</td>
+        </tr>
+        <tr>
+            <td>Harish</td>
+        </tr>
+        <tr>
+            <td>Srinivas</td>
+        </tr>
+        <tr>
+            <td>Imran</td>
+        </tr>
+        <tr>
+            <td>Sai Pujari</td>
+        </tr>
+        <tr>
+            <td>Chandrika</td>
+        </tr>
+    </table>
+
+    <script>
+        const searchFun = () => {
+            let filter = document.getElementById('myInput').value.toUpperCase();
+
+            let myTable = document.getElementById('myTable');
+
+            let tr = myTable.getElementsByTagName('tr');
+
+            for (var i = 0; i < tr.length; i++) {
+                let td = tr[i].getElementsByTagName('td')[0];
+
+                if (td) {
+                    let textvalue = td.textContent || td.innerHTML;
+
+                    if (textvalue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display == "";
+                    }
+                    else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+    </script>
+
+    <!-- //  <input type="text" name="search" onkeyup="search_ops()" id="searchid" placeholder="search">
+    //     <ol id="list">
+    //       <li class="prod">bus</li>
+    //       <li class="prod">cat</li>
+    //       <li class="prod">tdain</li>
+    //       <li class="prod">ball</li>
+    //       <li class="prod">dog</li>
+    //       <li class="prod">tiger</li>
+    //       <li class="prod">ant</li>
+    //       <li class="prod">coding</li>
+    //       <li class="prod">angular</li>
+    //       <li class="prod">kit</li>
+    //       <li class="prod">fish</li>
+    //       <li class="prod">animals</li>
+    //     </ol>  -->
+</body>
+
+</html>
